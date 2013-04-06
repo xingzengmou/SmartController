@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SmartController</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tv_controller_10">控制器10</string>
+    <string name="tv_controller_10_tip">控制1楼</string>
+	<string name="tv_controller_9">控制器9</string>
+    <string name="tv_controller_9_tip">控制2楼</string>
+	<string name="tv_controller_8">控制器8</string>
+    <string name="tv_controller_8_tip">控制大会议室</string>
+	<string name="tv_controller_7">控制器7</string>
+    <string name="tv_controller_7_tip">控制15、16楼</string>
+	<string name="tv_controller_6">控制器6</string>
+    <string name="tv_controller_6_tip">控制13、14楼</string>
+	<string name="tv_controller_5">控制器5</string>
+    <string name="tv_controller_5_tip">控制11、12楼</string>
+	<string name="tv_controller_4">控制器4</string>
+    <string name="tv_controller_4_tip">控制5、6楼</string>
+	<string name="tv_controller_3">控制器3</string>
+    <string name="tv_controller_3_tip">控制3、4楼</string>
+	<string name="tv_controller_2">控制器2</string>
+    <string name="tv_controller_2_tip">控制9、10楼</string>
+	<string name="tv_controller_1">控制器1</string>
+    <string name="tv_controller_1_tip">控制7、8楼</string>
+    <string name="tv_ip_configuration">IP配置</string>
+	<string name="tv_quit_program">退出程序</string>
+    <string name="tv_controller_10_ip">控制器10[IP配置]</string>
+    <string name="tv_controller_9_ip">控制器9[IP配置]</string>
+    <string name="tv_controller_8_ip">控制器8[IP配置]</string>
+    <string name="tv_controller_7_ip">控制器7[IP配置]</string>
+    <string name="tv_controller_6_ip">控制器6[IP配置]</string>
+    <string name="tv_controller_5_ip">控制器5[IP配置]</string>
+    <string name="tv_controller_4_ip">控制器4[IP配置]</string>
+    <string name="tv_controller_3_ip">控制器3[IP配置]</string>
+    <string name="tv_controller_2_ip">控制器2[IP配置]</string>
+    <string name="tv_controller_1_ip">控制器1[IP配置]</string>
+    <string name="btn_save_ip">保存</string>
+    <string name="tv_passwd">"请输入密码: "</string>
+    <string name="btn_sure">确定</string>
+    <string name="passwd_error">密码错误</string>
+    <string name="btn_yes">确定</string>
+    <string name="btn_no">取消</string>
+    <string name="quit_tip">你确定要退出程序?</string>
+    <string name="btn_close">关闭</string>
+</resources>

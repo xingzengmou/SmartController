@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SmartControllerMainActivity"
+    android:background="@color/body_color" >
+
+    <ScrollView android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+	    <LinearLayout android:layout_width="150dp"
+	        android:layout_height="wrap_content"
+	        android:id="@+id/controller_ly"
+	        android:orientation="vertical" />
+    </ScrollView>
+    
+    <ImageView android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/focus_d_color"/>
+    
+    <LinearLayout android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/left_ly"
+        android:orientation="vertical" />
+        
+</LinearLayout>

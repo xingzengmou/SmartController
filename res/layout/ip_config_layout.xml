@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:orientation="vertical" >
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_10_ip"/>
+            <EditText android:id="@+id/et_controller_10_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_9_ip"/>
+            <EditText android:id="@+id/et_controller_9_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_8_ip"/>
+            <EditText android:id="@+id/et_controller_8_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_7_ip"/>
+            <EditText android:id="@+id/et_controller_7_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_6_ip"/>
+            <EditText android:id="@+id/et_controller_6_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_5_ip"/>
+            <EditText android:id="@+id/et_controller_5_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_4_ip"/>
+            <EditText android:id="@+id/et_controller_4_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_3_ip"/>
+            <EditText android:id="@+id/et_controller_3_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_2_ip"/>
+            <EditText android:id="@+id/et_controller_2_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_color"
+                android:text="@string/tv_controller_1_ip"/>
+            <EditText android:id="@+id/et_controller_1_ip"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textColor="@color/white_color"
+                android:layout_weight="1"/>
+        </LinearLayout>
+        
+        <Button android:id="@+id/btn_save_ip"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:text="@string/btn_save_ip"
+            android:background="@drawable/btn_click_state"/>
+    </LinearLayout>
+    
+</LinearLayout>
