@@ -53,6 +53,7 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 				LayoutParams btnLp = new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1.0f);
 				btnLp.setMargins(5, 5, 5, 5);
 				btn.setOnClickListener(this);
+				btn.setTextColor(0xffffffff);
 				ly.addView(btn, btnLp);
 				if (i % 4 == 0) {
 					LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
@@ -84,8 +85,8 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 		String ip = sp.getString(ViewControllerIPConfiguration.CONTROLLER_10_IP, "192.168.1.127");
 		if (ip.isEmpty()) {
 			AlertDialog.Builder b = new AlertDialog.Builder(lyContent.getContext());
-			b.setMessage("控制器10的IP还未设置，请先设置其IP");
 			b.setPositiveButton(R.string.btn_sure, null);
+			b.show();
 		} else {
 			mDatagramHandle.setIP(ip);
 			mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());

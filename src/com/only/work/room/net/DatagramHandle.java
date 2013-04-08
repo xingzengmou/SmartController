@@ -39,6 +39,7 @@ public class DatagramHandle {
 	
 	public void setIP(String ip) {
 		this.ip = ip;
+		Log.e(TAG, "IP = " + ip);
 		try {
 			inetAddress = InetAddress.getByName(ip);
 		} catch (UnknownHostException e) {

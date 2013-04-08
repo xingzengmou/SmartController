@@ -84,8 +84,8 @@ public class ViewController1 implements OnClickListener, OnUDPReceiveFinishListe
 		String ip = sp.getString(ViewControllerIPConfiguration.CONTROLLER_1_IP, "192.168.1.127");
 		if (ip.isEmpty()) {
 			AlertDialog.Builder b = new AlertDialog.Builder(lyContent.getContext());
-			b.setMessage("控制器1的IP还未设置，请先设置其IP");
 			b.setPositiveButton(R.string.btn_sure, null);
+			b.show();
 		} else {
 			mDatagramHandle.setIP(ip);
 			mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());
