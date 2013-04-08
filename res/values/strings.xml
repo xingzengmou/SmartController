@@ -44,4 +44,5 @@
     <string name="btn_no">取消</string>
     <string name="quit_tip">你确定要退出程序?</string>
     <string name="btn_close">关闭</string>
+    <string name="save_ok">保存完成</string>
 </resources>

@@ -10,7 +10,7 @@
         android:padding="5dp"
         android:background="#ff000000"
         android:orientation="vertical">
-    <com.blueocean.viewex.SeekBarEx android:id="@+id/brightness_seekbar"
+    <com.only.work.room.smartcontroller.SeekBarEx android:id="@+id/brightness_seekbar"
         android:layout_width="300dp"
         android:layout_height="30dp"
         android:progress="0"

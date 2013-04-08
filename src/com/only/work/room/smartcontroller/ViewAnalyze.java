@@ -10,7 +10,6 @@ import java.util.List;
 import com.only.work.room.controlcmd.*;
 import com.only.work.room.smartcontroller.*;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -31,8 +30,7 @@ public class ViewAnalyze {
 		Log.e(TAG, " VAL = " + val);
 		return val.trim();
 	}
-	
-	@SuppressLint({ "NewApi", "NewApi" })
+	  
 	@SuppressWarnings("finally")
 	public List<ButtonEx> loadButtonsSpecifyFile(String dir, String fileName) {
 		List<ButtonEx> btnList = new ArrayList<ButtonEx>();
@@ -153,8 +151,6 @@ public class ViewAnalyze {
 //			return airViewList;
 //		}
 //	}
-	
-	@SuppressLint({ "NewApi", "NewApi" })
 	@SuppressWarnings("finally")
 	public List<ButtonEx> getServiceButtons() {
 		List<ButtonEx> btnList = new ArrayList<ButtonEx>();
@@ -210,7 +206,6 @@ public class ViewAnalyze {
 		}
 	}
 	
-	@SuppressLint({ "NewApi", "NewApi" })
 	@SuppressWarnings("finally")
 	public List<ButtonEx> getCurtainMusicButtons() {
 		List<ButtonEx> btnList = new ArrayList<ButtonEx>();

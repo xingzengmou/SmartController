@@ -46,16 +46,17 @@ public class ViewControllerIPConfiguration implements OnClickListener {
 	 * @param v
 	 * @param inflater
 	 */
-	private static final String CONTROLLER_10_IP = "controller_10_ip";
-	private static final String CONTROLLER_9_IP = "controller_9_ip";
-	private static final String CONTROLLER_8_IP = "controller_8_ip";
-	private static final String CONTROLLER_7_IP = "controller_7_ip";
-	private static final String CONTROLLER_6_IP = "controller_6_ip";
-	private static final String CONTROLLER_5_IP = "controller_5_ip";
-	private static final String CONTROLLER_4_IP = "controller_4_ip";
-	private static final String CONTROLLER_3_IP = "controller_3_ip";
-	private static final String CONTROLLER_2_IP = "controller_2_ip";
-	private static final String CONTROLLER_1_IP = "controller_1_ip";
+	public static final String CONTROLLER_10_IP = "controller_10_ip";
+	public static final String CONTROLLER_9_IP = "controller_9_ip";
+	public static final String CONTROLLER_8_IP = "controller_8_ip";
+	public static final String CONTROLLER_7_IP = "controller_7_ip";
+	public static final String CONTROLLER_6_IP = "controller_6_ip";
+	public static final String CONTROLLER_5_IP = "controller_5_ip";
+	public static final String CONTROLLER_4_IP = "controller_4_ip";
+	public static final String CONTROLLER_3_IP = "controller_3_ip";
+	public static final String CONTROLLER_2_IP = "controller_2_ip";
+	public static final String CONTROLLER_1_IP = "controller_1_ip";
+	public static final String IP_CONFIGURATION_FILE = "ip_config";
 	
 	/*
 	 * 
@@ -67,7 +68,7 @@ public class ViewControllerIPConfiguration implements OnClickListener {
 	public ViewControllerIPConfiguration(View v, LayoutInflater inflater) {
 		ly = (LinearLayout) v;
 		view = (View) inflater.inflate(R.layout.ip_config_layout, null);
-		sp = view.getContext().getSharedPreferences("ip_config", Context.MODE_PRIVATE);
+		sp = view.getContext().getSharedPreferences(IP_CONFIGURATION_FILE, Context.MODE_PRIVATE);
 		editor = sp.edit();
 		getViewHandle();
 		initEditText();
@@ -144,6 +145,10 @@ public class ViewControllerIPConfiguration implements OnClickListener {
 			editor.putString(CONTROLLER_2_IP, etController2IP.getText().toString().trim());
 			editor.putString(CONTROLLER_1_IP, etController1IP.getText().toString().trim());
 			editor.commit();
+			AlertDialog.Builder b = new AlertDialog.Builder(view.getContext());
+			b.setMessage(R.string.save_ok);
+			b.setPositiveButton(R.string.btn_sure, null);
+			b.show();
 		}
 	}
 }

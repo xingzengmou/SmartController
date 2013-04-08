@@ -1,12 +1,16 @@
 package com.only.work.room.brightnesscontrol;
 
+import com.only.work.room.smartcontroller.ButtonEx;
 import com.only.work.room.smartcontroller.R;
+import com.only.work.room.smartcontroller.ViewControllerIPConfiguration;
 import com.only.work.room.controlcmd.SceneControl;
 import com.only.work.room.controlcmd.SingleControl;
 import com.only.work.room.net.DatagramHandle;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -19,9 +23,9 @@ public class BrightnessControl implements OnSeekBarChangeListener {
 	private Dialog brightnessDialog;
 	private Context ctx;
 	private SeekBar mSeekBar;
-	private SingleControl mSingleControl;
-	private DatagramHandle mDatagramHandle;
-	private SharedPreferenceConfig mSharedPreferenceConfig;
+	private SingleControl mSingleControl = null;
+	private DatagramHandle mDatagramHandle = null;
+	private ButtonEx currentBtne = null;
 
 	
 	public BrightnessControl(Context ctx) {
@@ -35,11 +39,12 @@ public class BrightnessControl implements OnSeekBarChangeListener {
 		btnClose.setOnClickListener(quitView);
 		mSeekBar.setMax(100);
 		mSeekBar.setOnSeekBarChangeListener(this);
-		mSingleControl = new SingleControl();
-		mDatagramHandle = new DatagramHandle();
-		mSharedPreferenceConfig = new SharedPreferenceConfig(ctx);
-		mDatagramHandle.setIP(mSharedPreferenceConfig.getString("net_ip", "192.168.1.127"));
-		mDatagramHandle.setPort(Integer.parseInt(mSharedPreferenceConfig.getString("net_port", "3342")));
+	}
+	
+	public void setParams(DatagramHandle datagramHandle, SingleControl singleControl, ButtonEx be) {
+		mDatagramHandle = datagramHandle;
+		mSingleControl = singleControl;
+		currentBtne = be;
 	}
 	
 	private View.OnClickListener quitView = new View.OnClickListener() {
@@ -52,7 +57,13 @@ public class BrightnessControl implements OnSeekBarChangeListener {
 	};
 	
 	public void show() {
-		brightnessDialog.show();
+		if (mSingleControl == null || mDatagramHandle ==  null || currentBtne == null) {
+			AlertDialog.Builder b = new AlertDialog.Builder(ctx);
+			b.setMessage("先用setParams函数设置参数先");
+			b.setPositiveButton(R.string.btn_sure, null);
+		} else {
+			brightnessDialog.show();
+		}
 	}
 	
 	public void dismiss() {
@@ -75,10 +86,8 @@ public class BrightnessControl implements OnSeekBarChangeListener {
 			boolean fromUser) {
 		// TODO Auto-generated method stub
 		mSingleControl.setTargetState(progress);
-//		mSingleControl.control();
 		mDatagramHandle.send(mSingleControl.getCmd());
-//		if (ControlView.brightnessCurrentBtn != null)
-//			ControlView.brightnessCurrentBtn.setBrightness(progress);
+		currentBtne.setBrightness(progress);
 		mSeekBar.setProgress(progress);
 		Log.e(TAG, " start progress = " + progress);
 	}
@@ -93,10 +102,8 @@ public class BrightnessControl implements OnSeekBarChangeListener {
 	public void onStopTrackingTouch(SeekBar seekBar) {
 		// TODO Auto-generated method stub
 		mSingleControl.setTargetState(mSeekBar.getProgress());
-//		mSingleControl.control();
 		mDatagramHandle.send(mSingleControl.getCmd());
-//		if (ControlView.brightnessCurrentBtn != null)
-//			ControlView.brightnessCurrentBtn.setBrightness(mSeekBar.getProgress());
+		currentBtne.setBrightness(mSeekBar.getProgress());
 		Log.e(TAG, " stop progress = " + mSeekBar.getProgress());
 		mSeekBar.setProgress(mSeekBar.getProgress());
 	}

@@ -10,6 +10,9 @@ import com.only.work.room.controlcmd.SingleQueryCmd;
 import com.only.work.room.net.DatagramHandle;
 import com.only.work.room.net.OnUDPReceiveFinishListener;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Handler;
 import android.os.Message;
@@ -28,13 +31,13 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 	private LinearLayout lyContent = null;
 	private DatagramHandle mDatagramHandle;
 	private BrightnessControl mBrightnessControl = null;
-	private static ButtonEx brightnessCurrentBtn = null;
 	private SingleControl mSingleControl = null;
 	private SceneControl mSceneControl = null;
 	private UIHandler uiHandler;
 	private String cmdName;
 	private int qListIndex = 0;
 	private List<QueryCmd> qList;
+	private SharedPreferences sp;
 	
 	public ViewController10(View v, LayoutInflater inflater) {
 		lyContent = (LinearLayout) v;
@@ -57,25 +60,38 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 					ly = new LinearLayout(v.getContext());
 				}
 			}
+			i -= 1;
 			if (i % 4 != 0) {
 				LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
 				lyTemp.addView(ly, lp);
 			}
 		}
 		qList = mViewAnalyze.getQueryCmd(listBtns);
+		mSingleControl = new SingleControl();
+		mSceneControl = new SceneControl();
+		mBrightnessControl = new BrightnessControl(v.getContext());
 		mDatagramHandle = new DatagramHandle();
 		mDatagramHandle.setOnUDPReceivFinishListener(this);
-		mBrightnessControl = new BrightnessControl(v.getContext());
-		
+		uiHandler = new UIHandler();
 		SingleQueryCmd.setHardwareID(qList.get(qListIndex).hardwareID);
-		mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());
-		Log.e(TAG, " qc.cmdName = " + qList.get(qListIndex).cmdName + " qc.hardwraeid = " + qList.get(qListIndex).hardwareID);
-		qListIndex ++;
+		sp = v.getContext().getSharedPreferences(ViewControllerIPConfiguration.IP_CONFIGURATION_FILE, Context.MODE_PRIVATE);
 	}
 	
 	public void show() {
 		lyContent.removeAllViews();
 		lyContent.addView(lyTemp);
+		qListIndex = 0;
+		String ip = sp.getString(ViewControllerIPConfiguration.CONTROLLER_10_IP, "192.168.1.127");
+		if (ip.isEmpty()) {
+			AlertDialog.Builder b = new AlertDialog.Builder(lyContent.getContext());
+			b.setMessage("控制器10的IP还未设置，请先设置其IP");
+			b.setPositiveButton(R.string.btn_sure, null);
+		} else {
+			mDatagramHandle.setIP(ip);
+			mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());
+			Log.e(TAG, " qc.cmdName = " + qList.get(qListIndex).cmdName + " qc.hardwraeid = " + qList.get(qListIndex).hardwareID);
+			qListIndex ++;
+		}
 	}
 
 	@Override
@@ -84,11 +100,11 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 		for (ButtonEx be: listBtns) {
 			if (be.equals(arg0)) {
 				if (be.getCmdName().equals("light")) {
+					mBrightnessControl.setParams(mDatagramHandle, mSingleControl, be);
 					mBrightnessControl.setLightHardwareID(be.getHardwareId());
 					mBrightnessControl.setLightTargetID(be.getTargetCode());
 					mBrightnessControl.setBrightness(be.getBrightness());
 					mBrightnessControl.show();
-					brightnessCurrentBtn = be;
 				} else if (be.getCmdName().equals("single")) {
 					if (be.getEnabled()) {
 						be.setEnabled(false);

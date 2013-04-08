@@ -7,6 +7,7 @@ import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
 
+import com.only.work.room.debug.Debug;
 import com.only.work.room.net.*;
 
 import android.os.Handler;
@@ -15,7 +16,7 @@ import android.util.Log;
 
 public class DatagramHandle {
 	private static final String TAG = "DatagramHandle";
-	private String ip = "";
+	private String ip = "192.168.1.127";
 	private int port = 3342;
 	private OnUDPReceiveFinishListener mOnUDPReceiveFinishListener;
 	private String sendType;
@@ -51,14 +52,16 @@ public class DatagramHandle {
 	}
 	
 	public void send( final byte[] cmd) {
-		String t = "";
-		for (byte b: cmd) {
-			t += Integer.toHexString((b & 0x00FF)) + " ";
+		if (Debug.debug) {
+			String t = "";
+			for (byte b: cmd) {
+				t += Integer.toHexString((b & 0x00FF)) + " ";
+			}
+			Log.e(TAG, "ip = " + ip + " port = " + port);
+			Log.e(TAG, " will be send: " + t);
 		}
-		Log.e(TAG, " will be send: " + t);
 		new Thread("") {
 			public void run() {
-//				Log.e(TAG, " single cmd = " + new String(cmd));
 				DatagramPacket p = new DatagramPacket( cmd, cmd.length, inetAddress, port);
 				try {
 					dSocket.send(p);
@@ -72,6 +75,13 @@ public class DatagramHandle {
 
 	@SuppressWarnings("finally")
 	public void receiver(final String cmdType, final byte[] cmd) {
+		if (Debug.debug) {
+			String temp = "";
+			for (byte b: cmd) {
+				temp += Integer.toHexString((b & 0xff));
+			}
+			Log.e(TAG, " receiver cmd = " + temp);
+		}
 		new Thread("") {
 			byte[] recvBuf = new byte[256];
 			public void run() {

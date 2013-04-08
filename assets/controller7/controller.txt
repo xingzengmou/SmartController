@@ -1,0 +1,13 @@
+﻿button=走廊射灯 #按钮名称
+btn_type=single #该按键为单路控制
+cmdtype=8102 #单路灯光控制
+hardwareid=1 #硬件模块ID
+targetcode=7 #第7路灯光
+end
+
+button=射    灯 #按钮名称
+btn_type=single #该按键为单路控制
+cmdtype=8102 #单路灯光控制
+hardwareid=1 #硬件模块ID
+targetcode=6 #第7路灯光
+end

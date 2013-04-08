@@ -81,6 +81,7 @@ public final class R {
         public static final int hello_world=0x7f060002;
         public static final int passwd_error=0x7f060026;
         public static final int quit_tip=0x7f060029;
+        public static final int save_ok=0x7f06002b;
         public static final int tv_controller_1=0x7f060015;
         public static final int tv_controller_10=0x7f060003;
         public static final int tv_controller_10_ip=0x7f060019;
