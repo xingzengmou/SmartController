@@ -17,7 +17,6 @@
             <EditText android:id="@+id/et_controller_10_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -31,7 +30,6 @@
             <EditText android:id="@+id/et_controller_9_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -45,7 +43,6 @@
             <EditText android:id="@+id/et_controller_8_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
@@ -62,7 +59,6 @@
             <EditText android:id="@+id/et_controller_7_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -76,7 +72,6 @@
             <EditText android:id="@+id/et_controller_6_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -90,7 +85,6 @@
             <EditText android:id="@+id/et_controller_5_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
@@ -107,7 +101,6 @@
             <EditText android:id="@+id/et_controller_4_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -121,7 +114,6 @@
             <EditText android:id="@+id/et_controller_3_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
@@ -135,7 +127,6 @@
             <EditText android:id="@+id/et_controller_2_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
     </LinearLayout>
@@ -152,14 +143,14 @@
             <EditText android:id="@+id/et_controller_1_ip"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:textColor="@color/white_color"
                 android:layout_weight="1"/>
         </LinearLayout>
         
         <Button android:id="@+id/btn_save_ip"
             android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_height="45dp"
             android:text="@string/btn_save_ip"
+            android:textColor="@color/white_color"
             android:background="@drawable/btn_click_state"/>
     </LinearLayout>
     

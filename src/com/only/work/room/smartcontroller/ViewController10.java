@@ -82,16 +82,24 @@ public class ViewController10 implements OnClickListener, OnUDPReceiveFinishList
 		lyContent.removeAllViews();
 		lyContent.addView(lyTemp);
 		qListIndex = 0;
-		String ip = sp.getString(ViewControllerIPConfiguration.CONTROLLER_10_IP, "192.168.1.127");
+		String ip = sp.getString(ViewControllerIPConfiguration.CONTROLLER_10_IP, "");
 		if (ip.isEmpty()) {
 			AlertDialog.Builder b = new AlertDialog.Builder(lyContent.getContext());
+			b.setMessage(R.string.log_controller10_ip_error);
 			b.setPositiveButton(R.string.btn_sure, null);
 			b.show();
 		} else {
-			mDatagramHandle.setIP(ip);
-			mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());
-			Log.e(TAG, " qc.cmdName = " + qList.get(qListIndex).cmdName + " qc.hardwraeid = " + qList.get(qListIndex).hardwareID);
-			qListIndex ++;
+			if (!mDatagramHandle.checkIP(ip)) {
+				AlertDialog.Builder b = new AlertDialog.Builder(lyContent.getContext());
+				b.setMessage(lyContent.getContext().getString(R.string.tv_controller_10_ip) + "\"" + ip + "\"" + lyContent.getContext().getString(R.string.log_invalid_ip));
+				b.setPositiveButton(R.string.btn_sure, null);
+				b.show();
+			} else {
+				mDatagramHandle.setIP(ip);
+				mDatagramHandle.receiver(qList.get(qListIndex).cmdName, SingleQueryCmd.getCmd());
+				Log.e(TAG, " qc.cmdName = " + qList.get(qListIndex).cmdName + " qc.hardwraeid = " + qList.get(qListIndex).hardwareID);
+				qListIndex ++;
+			}
 		}
 	}
 

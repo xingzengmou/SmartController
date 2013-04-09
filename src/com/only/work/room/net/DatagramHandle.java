@@ -52,6 +52,29 @@ public class DatagramHandle {
 		this.port = port;
 	}
 	
+	public boolean checkIP(String ip) {
+		String[] ipt = new String[4];
+		int count = 0;
+		int pos = ip.indexOf(".");
+		while (pos > 0) {
+			ipt[count] = ip.substring(0, pos);
+			ip = ip.substring(pos + 1);
+			pos = ip.indexOf(".");
+			count ++;
+		}
+		if (count > 3) return false;
+		ipt[count] = ip;
+		
+		Log.e(TAG, "ipt.length = " + ipt.length + " ip = " + ip + " ipt[0] = " + ipt[0]);
+		for (String t : ipt) {
+			int b = Integer.parseInt(t);
+			if (b < 0 || b > 255) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	public void send( final byte[] cmd) {
 		if (Debug.debug) {
 			String t = "";

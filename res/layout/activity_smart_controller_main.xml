@@ -2,25 +2,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical"
     tools:context=".SmartControllerMainActivity"
     android:background="@color/body_color" >
 
-    <ScrollView android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-	    <LinearLayout android:layout_width="150dp"
-	        android:layout_height="wrap_content"
-	        android:id="@+id/controller_ly"
-	        android:orientation="vertical" />
-    </ScrollView>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/top">
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white_color"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
     
-    <ImageView android:layout_width="1dp"
+    <LinearLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/focus_d_color"/>
-    
-    <LinearLayout android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/left_ly"
-        android:orientation="vertical" />
-        
+        android:orientation="horizontal">
+       
+		<LinearLayout android:layout_width="250dp"
+		    android:layout_height="match_parent"
+		    android:background="@drawable/left"
+		    android:layout_marginLeft="5dp"
+		    android:layout_marginBottom="5dp"
+		    android:paddingTop="25dp"
+		    android:paddingLeft="5dp"
+		    android:paddingRight="5dp"
+		    android:paddingBottom="5dp" >
+		    <ScrollView android:layout_width="match_parent"
+	        	android:layout_height="match_parent" >
+	        	<LinearLayout android:layout_width="match_parent"
+	        	    android:layout_height="match_parent"
+	        	    android:id="@+id/controller_ly"
+	        	    android:orientation="vertical"
+	        	    android:gravity="center" />
+		    </ScrollView>
+		</LinearLayout>
+	    
+	    <ScrollView android:layout_width="0dp"
+	        android:layout_height="match_parent"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginTop="18dp"
+	        android:layout_marginBottom="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_weight="1"
+	        android:background="@drawable/right">
+		    <LinearLayout android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:id="@+id/left_ly"
+		        android:orientation="vertical"/>
+	    </ScrollView>
+	</LinearLayout>
 </LinearLayout>

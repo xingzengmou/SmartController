@@ -45,4 +45,15 @@
     <string name="quit_tip">你确定要退出程序?</string>
     <string name="btn_close">关闭</string>
     <string name="save_ok">保存完成</string>
+    <string name="log_controller10_ip_error">控制器10 IP不能为空，请设置IP</string>
+    <string name="log_controller9_ip_error">控制器9 IP不能为空，请设置IP</string>
+    <string name="log_controller8_ip_error">控制器8 IP不能为空，请设置IP</string>
+    <string name="log_controller7_ip_error">控制器7 IP不能为空，请设置IP</string>
+    <string name="log_controller6_ip_error">控制器6 IP不能为空，请设置IP</string>
+    <string name="log_controller5_ip_error">控制器5 IP不能为空，请设置IP</string>
+    <string name="log_controller4_ip_error">控制器4 IP不能为空，请设置IP</string>
+    <string name="log_controller3_ip_error">控制器3 IP不能为空，请设置IP</string>
+    <string name="log_controller2_ip_error">控制器2 IP不能为空，请设置IP</string>
+    <string name="log_controller1_ip_error">控制器1 IP不能为空，请设置IP</string>
+    <string name="log_invalid_ip">无效IP</string>
 </resources>
