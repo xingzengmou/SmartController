@@ -41,14 +41,11 @@ public class SmartControllerMainActivity extends Activity implements OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         thisActivity = this;
-//        Window window=getWindow();
-//        WindowManager.LayoutParams wl = window.getAttributes();
-//        wl.flags=WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-//        wl.alpha=0.2f;
-//        window.setAttributes(wl);
-        setContentView(R.layout.activity_smart_controller_main);
-        getViewHandle();
-        setViewListener();
+        if (TimeLimitFunc.timeLimit(this)) {
+	        setContentView(R.layout.activity_smart_controller_main);
+	        getViewHandle();
+	        setViewListener();
+        }
     }
     
     private void initView() {
