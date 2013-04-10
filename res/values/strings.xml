@@ -56,4 +56,5 @@
     <string name="log_controller2_ip_error">控制器2 IP不能为空，请设置IP</string>
     <string name="log_controller1_ip_error">控制器1 IP不能为空，请设置IP</string>
     <string name="log_invalid_ip">无效IP</string>
+    <string name="time_out_log">对不起，软件的试用期已满，请联系当地的商家索取正式版软件，谢谢！</string>
 </resources>

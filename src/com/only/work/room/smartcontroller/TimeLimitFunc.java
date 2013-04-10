@@ -27,8 +27,8 @@ public class TimeLimitFunc {
         	} else if (dateCount >= 16){
         		overTime = true;
         		AlertDialog.Builder b = new AlertDialog.Builder(thiz);
-        		b.setMessage("对不起，软件的试用期已满，请联系当地的商家索取正式版软件，谢谢！");
-        		b.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+        		b.setMessage(R.string.time_out_log);
+        		b.setPositiveButton(R.string.btn_sure, new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
 						thiz.finish();
